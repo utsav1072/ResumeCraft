@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
         };
   
         try {
-            const response = await axios.post('http://localhost:8000/api/token/', userData);
+            const response = await axios.post('https://utsav10721.pythonanywhere.com/api/token/', userData);
             const { data } = response;
             setAuthTokens(data);
             localStorage.setItem("authTokens", JSON.stringify(data));
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
         };
         
         try {
-            const response = await axios.post(`http://localhost:8000/api/register/`, userData);
+            const response = await axios.post(`https://utsav10721.pythonanywhere.com/api/register/`, userData);
             console.log('User registered:', response.data);
         } catch (error) {
             console.error('Error registering user:', error);

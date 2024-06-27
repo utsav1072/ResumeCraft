@@ -113,7 +113,7 @@ const Template1 = ({ data, profilePicUrl }) => {
             {profilePicUrl && (
               <Image
                 style={styles.avatar}
-                src={`http://127.0.0.1:8000${profilePicUrl}`}
+                src={`https://utsav10721.pythonanywhere.com${profilePicUrl}`}
                 allowDangerousPaths
                 fixed
               />

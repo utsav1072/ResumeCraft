@@ -77,7 +77,7 @@ const ProfilePic = () => {
       <label htmlFor="profilePicInput">
         <Avatar
           alt="Profile Picture"
-          src={profilePicUrl ? `http://127.0.0.1:8000${profilePicUrl}` : ''}
+          src={profilePicUrl ? `https://utsav10721.pythonanywhere.com${profilePicUrl}` : ''}
           style={avatarStyle}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
