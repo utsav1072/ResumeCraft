@@ -36,17 +36,9 @@ const RegisterPage = () => {
     const handleRegister = async (event) => {
         event.preventDefault();
 
-        const userData = {
-          email,
-          username,
-          password,
-          password2
-        };
         
         try {
-          await registerUser(userData);
-          console.log('User registered successfully');
-          navigate('/login');
+          await registerUser(email,username,password,password2);
         } catch (error) {
           console.error('Error registering user:', error);
         }
