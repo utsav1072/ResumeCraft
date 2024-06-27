@@ -43,7 +43,7 @@ class ImportantLink(models.Model):
 
 class Education(models.Model):
     resume = models.ForeignKey(Resume, on_delete=models.CASCADE, related_name='educations')
-    school_name = models.CharField(max_length=200)
+    school_name = models.CharField(max_length=200, blank=True, null=True)
     degree = models.CharField(max_length=200, blank=True, null=True)
     start_date = models.CharField(max_length=20,blank=True, null=True)
     end_date = models.CharField(max_length=20,blank=True, null=True)
@@ -53,7 +53,7 @@ class Education(models.Model):
 
 class Skill(models.Model):
     resume = models.ForeignKey(Resume, on_delete=models.CASCADE, related_name='skills')
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, blank=True, null=True)
     display = models.BooleanField(default=True)
 
 class Coursework(models.Model):
@@ -74,7 +74,7 @@ class ProjectBulletPoint(models.Model):
 
 class CustomField(models.Model):
     resume = models.ForeignKey(Resume, on_delete=models.CASCADE, related_name='custom_fields')
-    heading = models.CharField(max_length=200)
+    heading = models.CharField(max_length=200, blank=True, null=True)
     link_name = models.CharField(max_length=200, blank=True, null=True)
     url = models.URLField(max_length=500, blank=True, null=True)
     subheading = models.CharField(max_length=200, blank=True, null=True)

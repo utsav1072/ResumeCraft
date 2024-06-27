@@ -21,7 +21,7 @@ const ProfilePic = () => {
         setProfilePicUrl(response.data.data.image);
       })
       .catch((error) => {
-        setError('Error fetching profile picture');
+        setError('No Profile Picture');
       });
   };
 

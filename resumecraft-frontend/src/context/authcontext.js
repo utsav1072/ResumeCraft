@@ -90,22 +90,33 @@ export const AuthProvider = ({ children }) => {
         try {
             const response = await axios.post(`https://utsav10721.pythonanywhere.com/api/register/`, userData);
             console.log('User registered:', response.data);
-    
+            
             Swal.fire({
                 icon: 'success',
                 title: 'Registration successful!',
                 showConfirmButton: false,
-                timer: 1000 // Automatically close after 1.5 seconds
+                timer: 1000 
             });
+            
         } catch (error) {
             console.error('Error registering user:', error);
+    
+            let errorMessage = 'An unexpected error occurred. Please try again.';
+            
+            if (error.response) {
+                if (error.response.status === 400) {
+                    errorMessage = error.response.data.email ? error.response.data.email[0] : error.response.data.username[0];
+                }
+            }
+            
             Swal.fire({
                 icon: 'error',
                 title: 'Registration failed',
-                text: error.response ? error.response.data.detail : 'An unexpected error occurred. Please try again.'
+                text: errorMessage
             });
         }
     };
+    
     
     const logoutUser = () => {
         setAuthTokens(null);

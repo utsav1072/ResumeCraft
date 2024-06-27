@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import Loginpage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import PrivateRoute from './services/privateRoute';
+import PrivateRoute1 from './services/privateRoute1';
 import DashBoard from './pages/DashBoard';
 import MyProjects from './pages/MyProjects';
 
@@ -26,9 +27,9 @@ function App() {
         <Route 
           path="/templates" 
           element={
-            <PrivateRoute>
+            <PrivateRoute1>
               <MyProjects />
-            </PrivateRoute>
+            </PrivateRoute1>
           } 
         />
       </Routes>
