@@ -10,7 +10,7 @@
 
 ## Installing Dependencies
 
-### `python install -r requirements.txt'
+### `python install -r requirements.txt`
 
 ## Now Change Directory to resumecraft
 
