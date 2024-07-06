@@ -2,23 +2,23 @@
 
 ## Creating Virtual environment
 
-### 'python<version> -m venv <virtual-environment-name>'
+### `python<version> -m venv <virtual-environment-name>`
 
 ## Activating Virtual environment
 
-### '<virtual-environment-name>\scripts\activate'
+### `<virtual-environment-name>\scripts\activate`
 
 ## Installing Dependencies
 
-### 'python install -r requirements.txt'
+### `python install -r requirements.txt'
 
 ## Now Change Directory to resumecraft
 
-### 'cd resumecraft'
+### `cd resumecraft`
 
 ## Now you can run server
 
-### 'python manage.py runserver'
+### `python manage.py runserver`
 
 
 # Resumecraft Frontend
