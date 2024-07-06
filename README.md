@@ -6,7 +6,7 @@
 
 ## Activating Virtual environment
 
-### <virtual-environment-name>\scripts\activate
+### nameofenv\scripts\activate
 
 ## Installing Dependencies
 
