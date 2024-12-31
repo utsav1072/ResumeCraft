@@ -13,4 +13,5 @@ urlpatterns = [
     path('image/', views.testEndPoint, name='test'),
     path('', views.getRoutes),
     path('resume/', views.UserResumeView.as_view(), name='user_resume'),
+    path('analyze-resume/', views.ResumeAnalyzerView.as_view(), name='analyze-resume'),
 ]

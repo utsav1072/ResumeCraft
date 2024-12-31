@@ -8,7 +8,75 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
+from dotenv import load_dotenv
+import base64
+import os
+import io
+from PIL import Image
+import pdf2image
+import google.generativeai as genai
+from rest_framework.parsers import MultiPartParser, FormParser
 
+
+########################################################################################
+# Load environment variables
+load_dotenv()
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+
+# Helper function to convert PDF to base64 image format
+def input_pdf_setup(uploaded_file):
+    try:
+        images = pdf2image.convert_from_bytes(uploaded_file.read())
+        first_page = images[0]
+
+        # Convert to bytes
+        img_byte_arr = io.BytesIO()
+        first_page.save(img_byte_arr, format='JPEG')
+        img_byte_arr = img_byte_arr.getvalue()
+
+        pdf_parts = [
+            {
+                "mime_type": "image/jpeg",
+                "data": base64.b64encode(img_byte_arr).decode()  # encode to base64
+            }
+        ]
+        return pdf_parts
+    except Exception as e:
+        raise Exception(f"Error processing PDF: {str(e)}")
+
+# Helper function to get Gemini response
+def get_gemini_response(input_text, pdf_content, prompt):
+    try:
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        response = model.generate_content([input_text, pdf_content[0], prompt])
+        return response.text
+    except Exception as e:
+        raise Exception(f"Error communicating with Gemini API: {str(e)}")
+
+class ResumeAnalyzerView(APIView):
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request):
+        try:
+            # Get inputs
+            input_text = request.data.get("input_text", "")
+            input_prompt = request.data.get("input_prompt", "")
+            uploaded_file = request.FILES.get("file")
+
+            if not uploaded_file:
+                return Response({"error": "No file uploaded"}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Process PDF and get its content
+            pdf_content = input_pdf_setup(uploaded_file)
+
+            # Generate response using Gemini
+            response = get_gemini_response(input_text, pdf_content, input_prompt)
+
+            # Return the response
+            return Response({"response": response}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+###########################################################################################
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer

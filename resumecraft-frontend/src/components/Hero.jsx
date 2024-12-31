@@ -44,7 +44,7 @@ export default function Hero() {
               fontSize: 'clamp(3.5rem, 10vw, 4rem)',
             }}
           >
-            Create Your&nbsp;
+            Analyze Your&nbsp;
             <Typography
               component="span"
               variant="h1"
@@ -62,7 +62,7 @@ export default function Hero() {
             color="text.secondary"
             sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' } }}
           >
-            Create professional and personalized resumes effortlessly with ResumeCraft. Our intuitive tools and templates help you showcase your skills and experience with ease.
+            Uncover insights with our powerful resume analysis. Identify strengths, weaknesses, and areas of improvement instantly.
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
@@ -71,8 +71,8 @@ export default function Hero() {
             useFlexGap
             sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
           >
-            <Button variant="contained" color="primary" component={Link} to="/dashboard">
-              Start now
+            <Button variant="contained" color="primary" component={Link} to="/analyze-resume">
+              Analyze now
             </Button>
           </Stack>
         </Stack>

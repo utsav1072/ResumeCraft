@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Loginpage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import AnalyzeResume from './pages/AnalyzeResume'
 import PrivateRoute from './services/privateRoute';
 import PrivateRoute1 from './services/privateRoute1';
 import DashBoard from './pages/DashBoard';
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Loginpage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/" element={<HomePage />} />
+        <Route path="/analyze-resume" element={<AnalyzeResume />} />
         <Route 
           path="/dashboard" 
           element={
