@@ -66,7 +66,10 @@ const ResumeAnalyzer = () => {
       alert("Please upload a file");
       return;
     }
-
+    if (!inputText) {
+      alert("Please provide a Job description");
+      return;
+    }
     const formData = new FormData();
     formData.append("file", file);
     formData.append("input_text", inputText);
@@ -139,7 +142,7 @@ const ResumeAnalyzer = () => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => handleSubmit("Prompt 1")}
+              onClick={() => handleSubmit("You are an experienced Technical Human Resource Manager,your task is to review the provided resume against the job description. Please share your professional evaluation on whether the candidate's profile aligns with the role. Highlight the strengths and weaknesses of the applicant in relation to the specified job requirements.")}
               fullWidth
             >
               Analyze Resume
@@ -147,7 +150,7 @@ const ResumeAnalyzer = () => {
             <Button
               variant="contained"
               color="secondary"
-              onClick={() => handleSubmit("Prompt 2")}
+              onClick={() => handleSubmit("You are an skilled ATS (Applicant Tracking System) scanner with a deep understanding of data science and ATS functionality, your task is to evaluate the resume against the provided job description. give me the percentage of match if the resume matches the job description. First the output should come as percentage and then keywords missing and last final thoughts.")}
               fullWidth
             >
               Percentage Match
