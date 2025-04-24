@@ -42,11 +42,6 @@ A full-stack AI-powered resume builder that offers real-time suggestions, JD mat
 - SQLite 
 
 
-```
-
-```
-
----
 
 ## Setup and Installation
 
