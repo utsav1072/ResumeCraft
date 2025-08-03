@@ -6,7 +6,7 @@ import { Image9, Image10, Image11, Image12, Image13, Image14, Image15, Image16 }
 
 const TwoColumnTemplates = () => {
   const { TemplateSel } = useContext(AuthContext);
-  const totalTemplates = 8; // We are using only 8 templates as mentioned
+  // Removed unused totalTemplates variable
   const navigate = useNavigate();
 
   const handleTemplateClick = (templateIndex) => {

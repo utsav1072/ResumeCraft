@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, Font, Link } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Link, Font } from '@react-pdf/renderer';
 
 // Register fonts
 import FontRegular from '../assets/fonts/Roboto-Regular.ttf';

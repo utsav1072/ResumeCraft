@@ -27,7 +27,7 @@ const HomePage = () => {
     <ThemeProvider theme= {defaultTheme} >
       <CssBaseline />
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
-      <Box sx={{ bgcolor: 'background.default' }}>
+      <Box sx={{ bgcolor: 'background.default' , minHeight: '100vh'}}>
         <Hero/>
         <Divider />
         <Footer />

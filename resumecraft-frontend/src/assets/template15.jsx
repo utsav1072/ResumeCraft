@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet, Font, Link } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Link , Font} from '@react-pdf/renderer';
 
 // Register fonts
 const GreenWhiteResumeTemplate = ({ resumeData }) => {

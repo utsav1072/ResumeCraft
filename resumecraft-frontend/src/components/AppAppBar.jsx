@@ -20,11 +20,7 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../context/authcontext'; // Adjust path as necessary
 import Logo from '../assets/Logo';
 
-const logoStyle = {
-  width: '140px',
-  height: 'auto',
-  cursor: 'pointer',
-};
+// Removed unused logoStyle variable
 
 function AppAppBar({ mode, toggleColorMode }) {
   const { authTokens } = React.useContext(AuthContext);

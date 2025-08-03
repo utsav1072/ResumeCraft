@@ -6,7 +6,7 @@ import { Image17, Image18, Image19, Image20, Image21, Image22, Image23, Image24 
 
 const PhotoResumeTemplates = () => {
   const { TemplateSel } = useContext(AuthContext);
-  const totalTemplates = 8; // We are using only 8 templates as mentioned
+  // Removed unused totalTemplates variable
   const navigate = useNavigate();
 
   const handleTemplateClick = (templateIndex) => {

@@ -1,6 +1,6 @@
 // Template1.js
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet, Font, Image, Link } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Image, Link, Font } from '@react-pdf/renderer';
 
 // Register fonts
 import FontRegular from '../assets/fonts/Roboto-Regular.ttf';
